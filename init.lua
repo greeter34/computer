@@ -31,7 +31,7 @@ computer.register = function ( name, def )
             end
             node.name = OFFSTATE;
             minetest.env:set_node(pos, node);
-            nodeupdate(pos);
+            minetest.check_for_falling(pos);
         end;
     });
     minetest.register_node(OFFSTATE, {
@@ -56,7 +56,7 @@ computer.register = function ( name, def )
             end
             node.name = ONSTATE;
             minetest.env:set_node(pos, node);
-            nodeupdate(pos);
+            minetest.check_for_falling(pos);
         end;
         drop = ONSTATE;
     });
